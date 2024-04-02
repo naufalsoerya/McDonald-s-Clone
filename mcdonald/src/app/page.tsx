@@ -1,6 +1,7 @@
 import Banner from "@/components/Banner";
 import Card from "@/components/Card";
 import Carousel from "@/components/Carousel";
+import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 
 export default function Home() {
@@ -25,6 +26,7 @@ export default function Home() {
 
       {/* Banner */}
       <Banner />
+      <Footer />
     </div>
   );
 }

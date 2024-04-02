@@ -13,10 +13,17 @@ export default function Banner() {
             className="w-full"
           />
       </div>
-      <div className="w-full">
+      <div className="w-full h-64">
           <Image
             alt="banner2"
             src={banner2}
+            className="w-full"
+          />
+      </div>
+      <div className="w-full mt-36">
+          <Image
+            alt="banner3"
+            src={banner3}
             className="w-full"
           />
       </div>
