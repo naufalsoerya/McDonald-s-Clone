@@ -1,0 +1,162 @@
+[
+  {
+    "name": "Big Mac",
+    "price": 50000,
+    "description": "Two all-beef patties, special sauce, lettuce, cheese, pickles, onions on a sesame seed bun.",
+    "imgUrl": "https://s7d1.scene7.com/is/image/mcdonalds/Header_BigMac_832x472:1-3-product-tile-desktop?wid=763&hei=472&dpr=off",
+    "categoryId": 1,
+    "authorId": 1
+  },
+  {
+    "name": "McChicken",
+    "price": 35000,
+    "description": "A crispy chicken fillet topped with lettuce and mayonnaise in a sesame seed bun.",
+    "imgUrl": "https://d2vuyvo9qdtgo9.cloudfront.net/foods/November2023/P2zG2zY5Z7dory0BUYfc.webp",
+    "categoryId": 1,
+    "authorId": 1
+  },
+  {
+    "name": "Filet-O-Fish",
+    "price": 40000,
+    "description": "A fish fillet topped with tartar sauce and a half-slice of cheese in a steamed bun.",
+    "imgUrl": "https://s7d1.scene7.com/is/image/mcdonalds/mcdonalds-Filet-o-Fish-2:1-3-product-tile-desktop?wid=829&hei=515&dpr=off",
+    "categoryId": 1,
+    "authorId": 1
+  },
+  {
+    "name": "Chicken McNuggets",
+    "price": 25000,
+    "description": "Tender, juicy chicken McNuggets served with your choice of dipping sauce.",
+    "imgUrl": "https://s7d1.scene7.com/is/image/mcdonalds/mcdonalds-Chicken-McNuggets-6-pieces-2:1-3-product-tile-desktop?wid=829&hei=515&dpr=off",
+    "categoryId": 1,
+    "authorId": 1
+  },
+  {
+    "name": "McDouble",
+    "price": 25000,
+    "description": "Two beef patties, cheese, onions, pickles, mustard, and ketchup in a double cheeseburger.",
+    "imgUrl": "https://s7d1.scene7.com/is/image/mcdonalds/Header_McDouble_832x472:1-3-product-tile-desktop?wid=763&hei=472&dpr=off",
+    "categoryId": 1,
+    "authorId": 1
+  },
+  {
+    "name": "Quarter Pounder with Cheese",
+    "price": 55000,
+    "description": "A quarter-pound beef patty with cheese, pickles, onions, mustard, and ketchup in a sesame seed bun.",
+    "imgUrl": "https://s7d1.scene7.com/is/image/mcdonalds/DC_202201_0007-005_QuarterPounderwithCheese_832x472:1-3-product-tile-desktop?wid=765&hei=472&dpr=off",
+    "categoryId": 1,
+    "authorId": 1
+  },
+  {
+    "name": "McFlurry Oreo",
+    "price": 30000,
+    "description": "Vanilla soft-serve mixed with crushed Oreo cookies for a delicious dessert.",
+    "imgUrl": "https://asset-2.tstatic.net/jakarta/foto/bank/images/es-krim-mcflurry.jpg",
+    "categoryId": 2,
+    "authorId": 2
+  },
+  {
+    "name": "Fries",
+    "price": 20000,
+    "description": "Golden, crispy McDonald's fries, served medium-sized.",
+    "imgUrl": "https://d2vuyvo9qdtgo9.cloudfront.net/foods/November2023/3t5navlXGbepANigzlmu.webp",
+    "categoryId": 2,
+    "authorId": 2
+  },
+  {
+    "name": "Apple Pie",
+    "price": 15000,
+    "description": "A warm, flaky pie filled with delicious apple filling.",
+    "imgUrl": "https://s7d1.scene7.com/is/image/mcdonalds/DC_202004_0706_BakedApplePie_Broken_832x472:1-3-product-tile-desktop?wid=765&hei=472&dpr=off",
+    "categoryId": 2,
+    "authorId": 2
+  },
+  {
+    "name": "Sausage McMuffin",
+    "price": 35000,
+    "description": "A savory sausage patty, egg, and cheese in a toasted English muffin.",
+    "imgUrl": "https://d2vuyvo9qdtgo9.cloudfront.net/foods/October2023/e4uy88JKbOpcdoJ3EXJO.webp",
+    "categoryId": 1,
+    "authorId": 1
+  },
+  {
+    "name": "Coca-Cola",
+    "price": 15000,
+    "description": "A refreshing medium-sized Coca-Cola drink to complement your meal.",
+    "imgUrl": "https://d2vuyvo9qdtgo9.cloudfront.net/foods/October2023/CbxOrdoQTStzTvq7U9G2.webp",
+    "categoryId": 3,
+    "authorId": 3
+  },
+  {
+    "name": "Hotcakes with Syrup",
+    "price": 30000,
+    "description": "Delicious hotcakes served with butter and syrup for a delightful breakfast.",
+    "imgUrl": "https://s7d1.scene7.com/is/image/mcdonalds/mcdonalds-hotcakes-syrup-butter:1-3-product-tile-desktop?wid=829&hei=515&dpr=off",
+    "categoryId": 1,
+    "authorId": 1
+  },
+  {
+    "name": "Spicy McChicken",
+    "price": 40000,
+    "description": "A spicy twist on the classic McChicken sandwich with a spicy mayo kick.",
+    "imgUrl": "https://s7d1.scene7.com/is/image/mcdonalds/Header_HotNSpicyMcChicken_832x472:1-3-product-tile-desktop?wid=763&hei=472&dpr=off",
+    "categoryId": 1,
+    "authorId": 1
+  },
+  {
+    "name": "Filet-O-Shrimp",
+    "price": 45000,
+    "description": "A shrimp patty topped with lettuce and tartar sauce in a steamed bun.",
+    "imgUrl": "https://www.mcdonalds.co.jp/product_images/6/1090-Shrimp-Filet-O.png?20240213140031",
+    "categoryId": 1,
+    "authorId": 1
+  },
+  {
+    "name": "Happy Meal",
+    "price": 35000,
+    "description": "A kid's meal with a choice of burger, chicken nuggets, or other options, accompanied by a toy.",
+    "imgUrl": "https://www.sembakoid.com/wp-content/uploads/2021/05/McDonalds-Happy-Meal-Ayam.png",
+    "categoryId": 1,
+    "authorId": 1
+  },
+  {
+    "name": "McVeggie Burger",
+    "price": 30000,
+    "description": "A vegetarian burger option with a patty made from a blend of vegetables and grains.",
+    "imgUrl": "McVeggie Burger",
+    "categoryId": 1,
+    "authorId": 1
+  },
+  {
+    "name": "Iced Coffee",
+    "price": 25000,
+    "description": "Chilled coffee with ice, perfect for a refreshing pick-me-up.",
+    "imgUrl": "https://d2vuyvo9qdtgo9.cloudfront.net/foods/October2023/qqUt7Skv42a6EG1AWzYA.webp",
+    "categoryId": 3,
+    "authorId": 3
+  },
+  {
+    "name": "Chicken Salad",
+    "price": 40000,
+    "description": "A healthy salad option with grilled chicken, fresh greens, and a variety of vegetables.",
+    "imgUrl": "https://s7d1.scene7.com/is/image/mcdonalds/mcdonalds-crispy-chicken-salad:1-3-product-tile-desktop?wid=829&hei=515&dpr=off",
+    "categoryId": 1,
+    "authorId": 1
+  },
+  {
+    "name": "Chocolate Sundae",
+    "price": 20000,
+    "description": "Creamy chocolate soft-serve topped with rich chocolate syrup.",
+    "imgUrl": "https://s7d1.scene7.com/is/image/mcdonalds/mcdonalds-crispy-chicken-salad:1-3-product-tile-desktop?wid=829&hei=515&dpr=off",
+    "categoryId": 2,
+    "authorId": 2
+  },
+  {
+    "name": "Mango Pineapple Smoothie",
+    "price": 30000,
+    "description": "A tropical smoothie blend of mango and pineapple for a fruity delight.",
+    "imgUrl": "https://s7d1.scene7.com/is/image/mcdonalds/DC_201906_2790_MediumMangoPineappleSmoothie_Glass_A1_832x472:1-3-product-tile-desktop?wid=765&hei=472&dpr=off",
+    "categoryId": 3,
+    "authorId": 3
+  }
+]
