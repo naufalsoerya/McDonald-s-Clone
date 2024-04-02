@@ -1,12 +1,20 @@
 import Link from "next/link";
+import Image from "next/image";
+import mcdonald from "../../assets/mcdonald.png"
 
 export default function NavBar() {
   return (
     <div className="navbar bg-base-100 static top-0">
       <div className="navbar-start px-12 text-yellow-500">
-        <Link href={"/home"} className="btn btn-ghost text-xl">McDonald's</Link>
+        <Link href={"/"}>
+          <Image
+            alt="logo"
+            src={mcdonald}
+            className="w-16"
+          />
+        </Link>
       </div>
-      <div className="navbar-center hidden lg:flex font-bold text-gray-400">
+      <div className="navbar-center hidden lg:flex font-bold text-gray-600">
         <ul className="menu menu-horizontal px-1">
           <li>
             <a>Menu</a>
