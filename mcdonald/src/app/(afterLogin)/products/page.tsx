@@ -55,7 +55,7 @@ export default function Products() {
           <Image alt="bannerProduct2" src={bannerProduct2} className="w-full" />
         </div>
       </div>
-      <div className="mt-12">
+      <div className="mt-12 ">
         <Footer />
       </div>
     </div>

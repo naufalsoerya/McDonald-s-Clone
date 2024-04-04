@@ -17,8 +17,15 @@ export default class ProductModel {
   }
 
   static async getAllProducts() {
-    const data = await this.productCollection().find().toArray()
+    const data = await this.productCollection().find().toArray();
     
     return data;
+  }
+
+  static async getFeaturedProducts() {
+    const data = await this.getAllProducts();
+    const featured = data.slice(0, 5);
+
+    return featured;
   }
 }

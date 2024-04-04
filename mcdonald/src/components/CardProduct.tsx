@@ -20,7 +20,7 @@ export default function CardProduct({ product }: { product: CardProps }) {
   return (
     <>
       <div className="flex flex-wrap justify-center">
-        <div className="card card-compact w-72 bg-base-100 shadow-xl">
+        <div className="card card-compact w-78 bg-base-100 shadow-xl">
           <figure>
             <img src={product.thumbnail} alt={product.name} />
           </figure>
