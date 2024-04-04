@@ -3,9 +3,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import mcdonald from "../../assets/mcdonald.png";
-import LogoutButton from "./Logout";
 
-export default function NavBar() {
+export default function NavBarHome() {
   return (
     <div className="navbar bg-base-100 static top-0">
       <div className="navbar-start px-12 text-yellow-500">
@@ -16,7 +15,9 @@ export default function NavBar() {
       <div className="navbar-center hidden lg:flex font-bold text-gray-600">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <Link href="/products">Menus</Link>
+            <Link href="/products">
+              Menus
+            </Link>
           </li>
           <li>
             <a>Wishlist</a>
@@ -24,7 +25,9 @@ export default function NavBar() {
         </ul>
       </div>
       <div className="navbar-end">
-        <LogoutButton />
+        <button className="btn btn-outline mr-6">
+          <Link href={"/"}>Login</Link>
+        </button>
       </div>
     </div>
   );

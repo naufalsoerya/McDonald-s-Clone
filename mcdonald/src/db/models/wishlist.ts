@@ -1,14 +1,6 @@
-import { ObjectId } from "mongodb";
+import { Wishlist } from '@/types'
 import { db } from "../config";
 import { z } from "zod";
-
-type Wishlists = {
-  _id: ObjectId;
-  userId: ObjectId; 
-  productId: ObjectId; 
-  createdAt: Date;
-  updatedAt: Date;
-};
 
 const WishlistValidation = z.object({
   userId: z.string({
@@ -19,8 +11,8 @@ const WishlistValidation = z.object({
   }),
 });
 
-export default class Wishlist {
+export default class WishlistModel {
   static wishlistCollection() {
-    return db.collection<Wishlists>("wishlists");
+    return db.collection<Wishlist>("wishlists");
   }
 }

@@ -1,5 +1,5 @@
 import { MongoClient, ServerApiVersion } from "mongodb";
-const uri: any = process.env.MONGO_URI
+const uri = process.env.MONGO_URI as string
 const dbName = process.env.MONGO_DB_NAME || "McDonald"; 
 
 const client = new MongoClient(uri, {

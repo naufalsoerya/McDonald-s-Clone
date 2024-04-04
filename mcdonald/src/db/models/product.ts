@@ -1,20 +1,6 @@
-import { ObjectId } from "mongodb";
+import { Product } from '@/types'
 import { db } from "../config";
 import { z } from "zod";
-
-type Products = {
-  _id: ObjectId;
-  name: string; 
-  slug: string; 
-  description: string;
-  excerpt: string;
-  price: number;
-  tags: string[];
-  thumbnail: string;
-  images: string[];
-  createdAt: Date;
-  updatedAt: Date;
-};
 
 const ProductValidation = z.object({
   name: z.string({
@@ -25,8 +11,14 @@ const ProductValidation = z.object({
   }),
 });
 
-export default class Product {
+export default class ProductModel {
   static productCollection() {
-    return db.collection<Products>("products");
+    return db.collection<Product>("products");
+  }
+
+  static async getAllProducts() {
+    const data = await this.productCollection().find().toArray()
+    
+    return data;
   }
 }
