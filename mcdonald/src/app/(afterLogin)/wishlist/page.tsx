@@ -1,5 +1,4 @@
 "use client";
-import Footer from "@/components/Footer";
 import { ObjectId } from "mongodb";
 import { useEffect, useState } from "react";
 import CardWishlist from "@/components/CardWishlist";
@@ -38,10 +37,13 @@ const WishlistPage = () => {
   useEffect(() => {
     const fetchWishlistItems = async () => {
       try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/wishlist`, {
-          method: "GET",
-          headers: {},
-        });
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_BASE_URL}/api/wishlist`,
+          {
+            method: "GET",
+            // headers: {},
+          }
+        );
 
         if (!response.ok) {
           throw new Error("Failed to fetch wishlist items");
@@ -61,26 +63,32 @@ const WishlistPage = () => {
   }, []);
 
   const handleRemoveItem = (id: string) => {
-    setWishlistItems(wishlistItems.filter(item => item._id !== id));
+    setWishlistItems(wishlistItems.filter((item) => item._id !== id));
   };
 
   return (
     <>
-      <main>
-        <h1 className="text-4xl font-bold text-center my-2 mt-14">My Wishlist</h1>
-        <h1 className="text-small text-center">Refresh to see an updated wishlist</h1>
+      <main className="bg-white">
+        <h1 className="text-4xl font-bold text-center pt-6 pb-2">
+          My Wishlist
+        </h1>
+        <h1 className="text-small text-center pb-5">Refresh page to update</h1>
         {loading ? (
-          <p>Loading...</p>
+          <p className="text-center mt-20">Loading...</p>
         ) : (
           <div className="flex flex-col space-y-4 overflow-auto max-h-[90vh]">
             {wishlistItems &&
               wishlistItems.map((item, index) => (
-                <CardWishlist key={index} product={item.productDetails} _id={item._id} onRemove={handleRemoveItem} />
+                <CardWishlist
+                  key={index}
+                  product={item.productDetails}
+                  _id={item._id}
+                  onRemove={handleRemoveItem}
+                />
               ))}
           </div>
         )}
       </main>
-      {/* <Footer /> */}
     </>
   );
 };

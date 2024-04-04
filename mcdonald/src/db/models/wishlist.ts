@@ -17,7 +17,7 @@ export default class WishlistModel {
     return db.collection<Wishlist>("wishlists");
   }
 
-  static async getWishlistByUserId(userId: string, productId: string) {
+  static async getWishlist(userId: string, productId: string) {
     const idUser = new ObjectId(userId);
     const idProduct = new ObjectId(productId);
     const data = await this.wishlistCollection().findOne({
@@ -28,8 +28,8 @@ export default class WishlistModel {
     return data;
   }
 
-  static async createWishlistByUserId(userId: string, productId: string) {
-    const validate = await this.getWishlistByUserId(userId, productId);
+  static async createWishlist(userId: string, productId: string) {
+    const validate = await this.getWishlist(userId, productId);
 
     if (validate) {
       throw new Error("Food already in wishlist");
@@ -47,7 +47,7 @@ export default class WishlistModel {
     }
   }
 
-  static async showWishlistByUserId(userId: string) {
+  static async showWishlist(userId: string) {
     const id = new ObjectId(userId);
     const data = await this.wishlistCollection()
       .aggregate([
@@ -58,7 +58,7 @@ export default class WishlistModel {
         },
         {
           $lookup: {
-            from: "Products",
+            from: "products",
             localField: "productId",
             foreignField: "_id",
             as: "productDetails",
@@ -92,7 +92,7 @@ export default class WishlistModel {
     return data;
   }
 
-  static async deleteWishlistById(id: string) {
+  static async deleteWishlist(id: string) {
     const data = await this.wishlistCollection().deleteOne({
       _id: new ObjectId(id),
     });

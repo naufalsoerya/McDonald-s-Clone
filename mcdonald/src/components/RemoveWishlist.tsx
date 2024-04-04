@@ -3,14 +3,14 @@ import React from 'react';
 import { redirect } from "next/navigation";
 import { useRouter } from 'next/navigation';
 
-interface RemoveFromWishlistButtonProps {
+interface RemoveProps {
   wishlistId: string;
 }
 
-const RemoveFromWishlistButton: React.FC<RemoveFromWishlistButtonProps> = ({ wishlistId }) => {
+const RemoveWishlist: React.FC<RemoveProps> = ({ wishlistId }) => {
   const router = useRouter();
 
-  const removeFromWishlist = async () => {
+  const remove = async () => {
     try {
       const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/wishlist`, {
         method: 'DELETE',
@@ -30,10 +30,10 @@ const RemoveFromWishlistButton: React.FC<RemoveFromWishlistButtonProps> = ({ wis
   };
 
   return (
-    <button onClick={removeFromWishlist} className="mt-2 px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-700 transition-colors">
+    <button onClick={remove} className="btn btn-outline btn-error">
       Remove from Wishlist
     </button>
   );
 };
 
-export default RemoveFromWishlistButton;
+export default RemoveWishlist;

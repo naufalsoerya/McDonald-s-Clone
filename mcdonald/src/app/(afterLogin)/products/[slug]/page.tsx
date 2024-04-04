@@ -1,4 +1,4 @@
-// 'use client'
+'use client'
 import AddToWishlistButton from "@/components/AddWishlist";
 import { Product } from "@/types";
 import type { Metadata, ResolvingMetadata } from "next";
@@ -8,23 +8,23 @@ type Props = {
   params: { slug: string };
 };
 
-export async function generateMetadata(
-  { params }: Props,
-  parent: ResolvingMetadata
-): Promise<Metadata> {
-  const slug = params.slug;
+// export async function generateMetadata(
+//   { params }: Props,
+//   parent: ResolvingMetadata
+// ): Promise<Metadata> {
+//   const slug = params.slug;
 
-  const product = await fetchData(slug);
+//   const product = await fetchData(slug);
 
-  const previousImages = (await parent).openGraph?.images || [];
+//   const previousImages = (await parent).openGraph?.images || [];
 
-  return {
-    title: product.data.name,
-    openGraph: {
-      images: ["/some-specific-page-image.jpg", ...previousImages],
-    },
-  };
-}
+//   return {
+//     title: product.data.name,
+//     openGraph: {
+//       images: ["/some-specific-page-image.jpg", ...previousImages],
+//     },
+//   };
+// }
 
 async function fetchData(slug: string) {
   const response = await fetch(`http://localhost:3000/api/products/${slug}`);

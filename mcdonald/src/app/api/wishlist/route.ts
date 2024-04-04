@@ -19,14 +19,12 @@ export const POST = async (request: Request) => {
     const body = await request.json();
     const { productId } = body;
 
-    const wishlistItem = await WishlistModel.createWishlistByUserId(
-      userId,
-      productId
-    );
+    const wishlistItem = await WishlistModel.createWishlist(userId, productId);
 
     return NextResponse.json(
       {
         message: "Wishlist item added",
+        data: wishlistItem,
       },
       {
         status: 201,
@@ -44,11 +42,9 @@ export const POST = async (request: Request) => {
   }
 };
 
-export const GET = async (
-  request: Request
-): Promise<Response | NextResponse> => {
+export async function GET(request: Request) {
   try {
-    const userId = request.headers.get("x-user-id");
+    const userId = request.headers.get("x-user-id") as string;
 
     if (!userId) {
       return NextResponse.json(
@@ -61,8 +57,9 @@ export const GET = async (
       );
     }
 
-    const getWishlist = await WishlistModel.showWishlistByUserId(userId);
+    const getWishlist = await WishlistModel.showWishlist(userId);
 
+    // return NextResponse.json({data: getWishlist})
     return new Response(JSON.stringify(getWishlist), {
       status: 200,
       headers: { "Content-Type": "application/json" },
@@ -77,7 +74,7 @@ export const GET = async (
       }
     );
   }
-};
+}
 
 export const DELETE = async (request: Request) => {
   try {
@@ -98,7 +95,7 @@ export const DELETE = async (request: Request) => {
 
     const { _id } = body;
 
-    const deleteWishlist = await WishlistModel.deleteWishlistById(_id);
+    const deleteWishlist = await WishlistModel.deleteWishlist(_id);
 
     return NextResponse.json(
       {
