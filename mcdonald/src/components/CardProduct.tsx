@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 interface CardProps {
   _id: Object;
   name: string; // validation: required
@@ -21,15 +23,14 @@ export default function CardProduct({ product }: { product: CardProps }) {
     <>
       <div className="flex flex-wrap justify-center">
         <div className="card card-compact w-78 bg-base-100 shadow-xl">
-          <figure>
-            <img src={product.thumbnail} alt={product.name} />
-          </figure>
+          <Link href={`/products/${product.slug}`}>
+            <figure>
+              <img src={product.thumbnail} alt={product.name} />
+            </figure>
+          </Link>
           <div className="card-body">
             <h2 className="card-title">{product.name}</h2>
             <p>{product.description}</p>
-            {/* <div className="flex justify-start">
-              <p className="text-green-600">$ {product.price}</p>
-            </div> */}
           </div>
         </div>
       </div>
