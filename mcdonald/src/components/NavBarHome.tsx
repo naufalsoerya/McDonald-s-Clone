@@ -26,7 +26,7 @@ export default function NavBarHome() {
       </div>
       <div className="navbar-end">
         <button className="btn btn-outline mr-6">
-          <Link href={"/"}>Login</Link>
+          <Link href={"/login"}>Login</Link>
         </button>
       </div>
     </div>

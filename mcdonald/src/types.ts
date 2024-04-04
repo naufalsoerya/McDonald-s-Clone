@@ -1,7 +1,7 @@
 import { ObjectId } from "mongodb";
 
 export interface User {
-  _id: ObjectId;
+  _id?: ObjectId;
   name: string;
   username: string; // validation: required, unique
   email: string; // validation: required, unique, email format
@@ -23,7 +23,7 @@ export interface Product {
 }
 
 export interface Wishlist {
-  _id: ObjectId;
+  _id?: ObjectId;
   userId: ObjectId; // validation: required
   productId: ObjectId; // validation: required
   createdAt: Date;

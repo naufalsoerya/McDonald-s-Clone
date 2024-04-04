@@ -19,7 +19,7 @@ export default function NavBar() {
             <Link href="/products">Menus</Link>
           </li>
           <li>
-            <a>Wishlist</a>
+            <Link href="/wishlist">Wishlist</Link>
           </li>
         </ul>
       </div>
