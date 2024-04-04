@@ -9,7 +9,7 @@ export default function NavBar() {
   return (
     <div className="navbar bg-base-100 static top-0">
       <div className="navbar-start px-12 text-yellow-500">
-        <Link href={"/"}>
+        <Link href={"/products"}>
           <Image alt="logo" src={mcdonald} className="w-16" />
         </Link>
       </div>

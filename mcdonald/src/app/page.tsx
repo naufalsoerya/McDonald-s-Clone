@@ -37,6 +37,7 @@ export default async function Home() {
   let result = await fetchData();
   const data = result.data;
 
+  
   return (
     <div className="bg-white">
       {/* NavBar */}
@@ -56,7 +57,7 @@ export default async function Home() {
           ))}
         </div>
         <div className="text-center">
-          <Link href="/products">
+          <Link href="/login">
             <button className="btn btn-wide mt-10 bg-red-600 hover:bg-red-700 ml-16">
               <h6 className="text-gray-100">Lihat Semua Menu</h6>
             </button>

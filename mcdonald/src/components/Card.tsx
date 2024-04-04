@@ -15,6 +15,7 @@ interface ArrayOfFeatured {
   product: featured[];
 }
 
+
 export default function Card({ product }: { product: featured }) {
   return (
     <>
