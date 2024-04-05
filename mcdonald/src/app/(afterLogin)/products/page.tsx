@@ -12,6 +12,11 @@ interface ArrayOfProduct {
   data: Product[];
 }
 
+export const metadata = {
+  title: "Products | McDonald's",
+  description: "**",
+}
+
 export default function Products() {
   const [products, setProducts] = useState<Product[]>([]);
   const [search, setSearch] = useState<string>("");
