@@ -1,11 +1,12 @@
-// 'use client'
+'use client'
 import React from 'react';
+import Swal from 'sweetalert2'
 
-interface AddToWishlistButtonProps {
+interface AddWishlistlistProps {
   productId: Object;
 }
 
-const AddToWishlistButton: React.FC<AddToWishlistButtonProps> = ({ productId }) => {
+const AddWishlist: React.FC<AddWishlistlistProps> = ({ productId }) => {
   const handleAddToWishlist = async () => {
     try {
       const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/wishlist`, {
@@ -23,10 +24,16 @@ const AddToWishlistButton: React.FC<AddToWishlistButtonProps> = ({ productId }) 
       }
 
       const result = await response.json();
-      alert(result.message); 
+      Swal.fire({
+        icon: "success",
+        text: `${result.message}`
+      }); 
     } catch (error) {
-      console.error('Error adding item to wishlist:', error);
-      alert('Error');
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "You cannot add the same food twice"
+      });
     }
   };
 
@@ -37,4 +44,4 @@ const AddToWishlistButton: React.FC<AddToWishlistButtonProps> = ({ productId }) 
   );
 };
 
-export default AddToWishlistButton;
+export default AddWishlist;

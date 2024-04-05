@@ -24,7 +24,7 @@ export default function CardProduct({ product }: { product: CardProps }) {
       <div className="flex flex-wrap justify-center">
         <div className="card card-compact w-78 bg-base-100 shadow-xl">
           <Link href={`/products/${product.slug}`}>
-            <figure>
+            <figure className="h-64 w-full">
               <img src={product.thumbnail} alt={product.name} />
             </figure>
           </Link>

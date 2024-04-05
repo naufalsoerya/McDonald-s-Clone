@@ -1,5 +1,5 @@
-'use client'
-import AddToWishlistButton from "@/components/AddWishlist";
+// 'use client'
+import Addwishlist from "@/components/AddWishlist";
 import { Product } from "@/types";
 import type { Metadata, ResolvingMetadata } from "next";
 import Link from "next/link";
@@ -8,23 +8,23 @@ type Props = {
   params: { slug: string };
 };
 
-// export async function generateMetadata(
-//   { params }: Props,
-//   parent: ResolvingMetadata
-// ): Promise<Metadata> {
-//   const slug = params.slug;
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const slug = params.slug;
 
-//   const product = await fetchData(slug);
+  const product = await fetchData(slug);
 
-//   const previousImages = (await parent).openGraph?.images || [];
+  const previousImages = (await parent).openGraph?.images || [];
 
-//   return {
-//     title: product.data.name,
-//     openGraph: {
-//       images: ["/some-specific-page-image.jpg", ...previousImages],
-//     },
-//   };
-// }
+  return {
+    title: product.data.name,
+    openGraph: {
+      images: ["/some-specific-page-image.jpg", ...previousImages],
+    },
+  };
+}
 
 async function fetchData(slug: string) {
   const response = await fetch(`http://localhost:3000/api/products/${slug}`);
@@ -56,7 +56,7 @@ export default async function DetailProduct({
             </p>
             <p className="mb-10">{product?.data.description}</p>
             <div className="mb-6">
-              <AddToWishlistButton productId={product.data._id} />
+              <Addwishlist productId={product?.data._id} />
             </div>
             <Link
               href="/products"

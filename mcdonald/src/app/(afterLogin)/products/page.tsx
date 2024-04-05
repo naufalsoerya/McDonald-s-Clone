@@ -5,6 +5,7 @@ import bannerProduct2 from "../../../../assets/bannerProduct2.jpg";
 import CardProduct from "@/components/CardProduct";
 import { Product } from "@/types";
 import { useEffect, useState } from "react";
+import { FaSearch } from "react-icons/fa";
 import Footer from "@/components/Footer";
 
 interface ArrayOfProduct {
@@ -13,6 +14,20 @@ interface ArrayOfProduct {
 
 export default function Products() {
   const [products, setProducts] = useState<Product[]>([]);
+  const [search, setSearch] = useState<string>("");
+  const [searchProduct, setSearchProduct] = useState<Product[]>([]);
+  let query = search.replaceAll(" ", "%20");
+
+  async function searchData(query: string) {
+    let response = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/api/products/search?search=` + query,
+      {
+        method: "get",
+        cache: "no-store",
+      }
+    );
+    setSearchProduct(((await response.json()) as ArrayOfProduct).data);
+  }
 
   useEffect(() => {
     async function fetchData() {
@@ -32,6 +47,15 @@ export default function Products() {
     }
     fetchData();
   }, []);
+
+  useEffect(() => {
+    if (search) {
+      searchData(search);
+    } else {
+      setSearchProduct(products);
+    }
+  }, [search, products]);
+
   return (
     <div className="bg-white">
       {/* banner product */}
@@ -40,14 +64,28 @@ export default function Products() {
       </div>
 
       {/* body product */}
-      <h1 className="text-center text-gray-800 text-4xl font-bold mt-14 mb-12">
+      <h1 className="text-center text-gray-800 text-4xl font-bold mt-14 mb-10">
         Semua Menu Kami
       </h1>
+      <div className="flex items-center justify-center mb-10 ml-10">
+            <input
+              type="text"
+              placeholder="Search your favourite menus"
+              className="w-96 p-2 border border-gray-300 rounded-lg "
+              value={search}
+              onChange={(event) => setSearch(event.target.value)}
+            />
+            <FaSearch className="ml-4 text-gray-500 cursor-pointer" />
+          </div>
       <div>
         <div className="grid grid-cols-4 gap-10 mt-10">
-          {products.map((product, idx) => (
-            <CardProduct key={idx} product={product} />
-          ))}
+          {search
+            ? searchProduct.map((product, idx) => (
+                <CardProduct key={idx} product={product} />
+              ))
+            : products.map((product, idx) => (
+                <CardProduct key={idx} product={product} />
+              ))}
         </div>
 
         {/* banner footer */}

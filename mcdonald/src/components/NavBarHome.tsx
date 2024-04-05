@@ -15,12 +15,12 @@ export default function NavBarHome() {
       <div className="navbar-center hidden lg:flex font-bold text-gray-600">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <Link href="/login">
+            <Link href="/products">
               Menus
             </Link>
           </li>
           <li>
-            <Link href="/login">Wishlist</Link>
+            <Link href="/wishlist">Wishlist</Link>
           </li>
         </ul>
       </div>

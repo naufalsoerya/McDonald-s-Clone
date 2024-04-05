@@ -1,6 +1,11 @@
 import { redirect } from "next/navigation";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Register | McDonald's",
+  description: "**",
+}
+
 export default function register() {
     async function registerAction(formData: FormData) {
       "use server";

@@ -5,6 +5,11 @@ import Footer from "@/components/Footer";
 import NavBarHome from "@/components/NavBarHome";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Home | McDonald's",
+  description: "**",
+}
+
 interface featured {
   name: string;
   slug: string;
@@ -57,7 +62,7 @@ export default async function Home() {
           ))}
         </div>
         <div className="text-center">
-          <Link href="/login">
+          <Link href="/products">
             <button className="btn btn-wide mt-10 bg-red-600 hover:bg-red-700 ml-16">
               <h6 className="text-gray-100">Lihat Semua Menu</h6>
             </button>

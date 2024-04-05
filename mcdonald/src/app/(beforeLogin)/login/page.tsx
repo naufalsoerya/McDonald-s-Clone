@@ -3,6 +3,11 @@ import Link from "next/link";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
+export const metadata = {
+  title: "Login | McDonald's",
+  description: "**",
+}
+
 export default function login() {
     async function loginAction(formData: FormData) {
       "use server";
