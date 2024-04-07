@@ -2,6 +2,8 @@
 import Link from "next/link";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import Swal from 'sweetalert2'
+export const dynamic = "force-dynamic"
 
 export const metadata = {
   title: "Login | McDonald's",
@@ -16,7 +18,7 @@ export default function login() {
         password: formData.get("password"),
       };
   
-      const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/login`, {
+      const response = await fetch(process.env.NEXT_PUBLIC_BASE_URL + "/api/login", {
         method: "POST",
         cache: "no-store",
         headers: {
@@ -26,16 +28,26 @@ export default function login() {
       });
 
       const responseJson = await response.json();
+
+      // console.log(responseJson, "<<<<<<<<< ini respon");
+      
+      if(responseJson.message === 'Wrong Email/Password') {
+        Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: 'Wrong Email/Password'
+      });
+      }
       
       cookies().set("Authorization", `Bearer ${responseJson.data.accessToken}`);
       redirect("/products");
     }
   
     return (
-      <>
+      <div>
         <div className="flex h-screen items-center justify-center">
           <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-3xl shadow-md">
-            <h2 className="text-3xl font-bold text-center text-yellow-500 mb-12">Login McDonald's</h2>
+            <h2 className="text-3xl font-bold text-center text-yellow-500 mb-12">Login McDonald</h2>
             <form action={loginAction} className="space-y-8">
               <div className="relative">
                 <label
@@ -90,6 +102,6 @@ export default function login() {
             </form>
           </div>
         </div>
-      </>
+      </div>
     );
   }

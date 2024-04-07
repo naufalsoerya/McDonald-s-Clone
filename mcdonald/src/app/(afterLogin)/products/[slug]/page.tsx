@@ -3,6 +3,7 @@ import Addwishlist from "@/components/AddWishlist";
 import { Product } from "@/types";
 import type { Metadata, ResolvingMetadata } from "next";
 import Link from "next/link";
+export const dynamic = "force-dynamic"
 
 type Props = {
   params: { slug: string };
@@ -15,6 +16,9 @@ export async function generateMetadata(
   const slug = params.slug;
 
   const product = await fetchData(slug);
+
+  // console.log(product, "<<<<<<<<< ini product");
+  
 
   const previousImages = (await parent).openGraph?.images || [];
 

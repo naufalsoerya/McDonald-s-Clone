@@ -7,14 +7,10 @@ import { Product } from "@/types";
 import { useEffect, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import Footer from "@/components/Footer";
+export const dynamic = "force-dynamic"
 
 interface ArrayOfProduct {
   data: Product[];
-}
-
-export const metadata = {
-  title: "Products | McDonald's",
-  description: "**",
 }
 
 export default function Products() {
@@ -25,7 +21,7 @@ export default function Products() {
 
   async function searchData(query: string) {
     let response = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/api/products/search?search=` + query,
+      process.env.NEXT_PUBLIC_BASE_URL + "/api/products/search?search=" + query,
       {
         method: "get",
         cache: "no-store",
@@ -37,8 +33,9 @@ export default function Products() {
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/api/products`,
+        process.env.NEXT_PUBLIC_BASE_URL + "/api/products",
         {
+          method: "get",
           cache: "no-store",
         }
       );

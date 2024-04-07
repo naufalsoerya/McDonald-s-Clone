@@ -1,19 +1,16 @@
 "use client";
 import React from "react";
 import { redirect } from "next/navigation";
-import { useRouter } from "next/navigation";
 
 interface RemoveProps {
   wishlistId: string;
 }
 
 const RemoveWishlist: React.FC<RemoveProps> = ({ wishlistId }) => {
-  const router = useRouter();
-
   const remove = async () => {
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/api/wishlist`,
+        process.env.NEXT_PUBLIC_BASE_URL + "/api/wishlist",
         {
           method: "DELETE",
           headers: {

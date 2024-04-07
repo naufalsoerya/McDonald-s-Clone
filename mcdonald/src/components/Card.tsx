@@ -21,7 +21,7 @@ export default function Card({ product }: { product: featured }) {
     <>
       <div className="flex flex-wrap ml-6">
         <div className="card card-compact w-64 bg-base-100 shadow-xl">
-          <figure>
+          <figure className="h-64 w-full">
             <img
               src={product.thumbnail}
               alt={product.name}

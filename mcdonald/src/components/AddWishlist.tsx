@@ -9,7 +9,7 @@ interface AddWishlistlistProps {
 const AddWishlist: React.FC<AddWishlistlistProps> = ({ productId }) => {
   const handleAddToWishlist = async () => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/wishlist`, {
+      const response = await fetch(process.env.NEXT_PUBLIC_BASE_URL + "/api/wishlist", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

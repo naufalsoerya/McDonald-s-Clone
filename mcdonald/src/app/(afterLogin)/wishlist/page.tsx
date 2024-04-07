@@ -2,6 +2,7 @@
 import { ObjectId } from "mongodb";
 import { useEffect, useState } from "react";
 import CardWishlist from "@/components/CardWishlist";
+export const dynamic = "force-dynamic"
 
 interface Product {
   _id: ObjectId;
@@ -38,7 +39,7 @@ const WishlistPage = () => {
     const fetchWishlistItems = async () => {
       try {
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_BASE_URL}/api/wishlist`,
+          process.env.NEXT_PUBLIC_BASE_URL + "/api/wishlist",
           {
             method: "GET",
             // headers: {},

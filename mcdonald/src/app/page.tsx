@@ -4,6 +4,7 @@ import Carousel from "@/components/Carousel";
 import Footer from "@/components/Footer";
 import NavBarHome from "@/components/NavBarHome";
 import Link from "next/link";
+export const dynamic = "force-dynamic"
 
 export const metadata = {
   title: "Home | McDonald's",
@@ -29,7 +30,7 @@ interface ArrayOfFeatured {
 
 const fetchData = async () => {
   const data = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/featuredProducts`,
+    process.env.NEXT_PUBLIC_BASE_URL + "/api/featuredProducts",
     {
       method: "get",
     }

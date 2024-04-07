@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
 import Link from "next/link";
+export const dynamic = "force-dynamic"
 
 export const metadata = {
   title: "Register | McDonald's",
@@ -17,7 +18,7 @@ export default function register() {
         password: formData.get("password"),
       };
   
-      const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/register`, {
+      const response = await fetch(process.env.NEXT_PUBLIC_BASE_URL + "/api/register", {
         method: "post",
         cache: "no-store",
         headers: {
@@ -29,11 +30,11 @@ export default function register() {
     }
   
     return (
-      <>
+      <div>
         <div className="pt-44 mb-10">
           <div className="max-w-lg mx-auto p-8 bg-white shadow-lg rounded-3xl">
             <h2 className="text-3xl font-bold text-center mb-6 text-yellow-500">
-              Register McDonald's
+              Register McDonald
             </h2>
             <form action={registerAction} className="space-y-4">
               <div>
@@ -93,6 +94,6 @@ export default function register() {
             </form>
           </div>
         </div>
-      </>
+      </div>
     );
   }
