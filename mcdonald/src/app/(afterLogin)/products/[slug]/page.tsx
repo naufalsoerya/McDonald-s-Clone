@@ -17,9 +17,6 @@ export async function generateMetadata(
 
   const product = await fetchData(slug);
 
-  // console.log(product, "<<<<<<<<< ini product");
-  
-
   const previousImages = (await parent).openGraph?.images || [];
 
   return {
@@ -31,7 +28,10 @@ export async function generateMetadata(
 }
 
 async function fetchData(slug: string) {
-  const response = await fetch(`http://localhost:3000/api/products/${slug}`);
+  const response = await fetch(process.env.NEXT_PUBLIC_BASE_URL + `/api/products/${slug}`, {
+    method: "get",
+    cache: "no-store",
+  });
   const data = await response.json();
   return data;
 }
